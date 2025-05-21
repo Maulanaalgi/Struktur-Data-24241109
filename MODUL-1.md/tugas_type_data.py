@@ -10,8 +10,6 @@ for i in range(jumlah_mahasiswa):
     print(f"\nMahasiswa ke-{i+1}")
     nim = input("Masukkan NIM: ")         # str
     nama = input("Masukkan Nama: ")       # str
-    jurusan = input("masukkan jurusan: ")    # str
-    alamat = input("masukan alamat: ")   # str
 
     # List untuk menyimpan tuple (mata kuliah, nilai)
     daftar_nilai = []
@@ -25,8 +23,6 @@ for i in range(jumlah_mahasiswa):
     # Simpan dalam dictionary
     data_mahasiswa[nim] = {
         "nama": nama,
-        "alamat": alamat,
-        "jurusan": jurusan,
         "nilai": daftar_nilai
         
     }
@@ -35,8 +31,6 @@ for i in range(jumlah_mahasiswa):
 print("\n=== Daftar Data Mahasiswa dan Nilai Rata-Rata ===")
 for nim, info in data_mahasiswa.items():
     nama = info["nama"]
-    alamat = info["alamat"]
-    jurusan = info["jurusan"]
     nilai_matkul = info["nilai"]
     
     # Hitung rata-rata
@@ -45,8 +39,6 @@ for nim, info in data_mahasiswa.items():
 
     print(f"\nNIM       : {nim}")
     print(f"Nama      : {nama}")
-    print(f"alamat    : {alamat}")
-    print(f"jurusan   : {jurusan}")
     print("Nilai     :")
     for matkul, nilai in nilai_matkul:
         print(f"  {matkul} = {nilai}")
