@@ -68,35 +68,42 @@ def hapus_mahasiswa(): #Jika indeks tidak valid, program akan memberi tahu pengg
         print("Input harus berupa angka.") #Jika input bukan angka, program akan memberi tahu bahwa input harus berupa angka.
 
 # Fungsi Menu
-def tampilkan_menu(): #Ini adalah fungsi untuk menampilkan menu pilihan.
-    print("\n--- MENU MANAJEMEN MAHASISWA ---")
-    print("[1] Tampilkan Mahasiswa")
+def tampilkan_menu(): #Di sini kita membuat sebuah fungsi yang bernama 'tampilkan_menu'. Fungsi adalah sekumpulan perintah yang bisa kita panggil untuk melakukan tugas tertentu.
+    print("\n--- MENU MANAJEMEN MAHASISWA ---") #Baris ini akan mencetak (menampilkan) judul menu di layar. Tanda '\n' di depan membuat ada jarak baru sebelum judul muncul.
+
+    print("[1] Tampilkan Mahasiswa") #Di sini, kita menampilkan beberapa pilihan yang bisa dipilih oleh pengguna. Setiap pilihan memiliki nomor dan deskripsi.
+
     print("[2] Tambah Mahasiswa")
     print("[3] Ubah Mahasiswa")
     print("[4] Hapus Mahasiswa")
-    print("[5] Keluar")
+    print("[5] Keluar") #Di sini, kita menampilkan beberapa pilihan yang bisa dipilih oleh pengguna. Setiap pilihan memiliki nomor dan deskripsi.
+
 
 # Main Loop
-def main():
-    while True:  
-        tampilkan_menu()
+def main(): #Kita membuat fungsi lain yang bernama 'main'. Ini adalah fungsi utama yang akan menjalankan program.
+
+    while True: #'while' True: berarti kita akan terus menjalankan perintah di dalamnya tanpa henti sampai kita menghentikannya secara manual.
+ 
+        tampilkan_menu() #Di sini, kita memanggil fungsi 'tampilkan_menu()' untuk menampilkan menu pilihan kepada pengguna.
+
         try:
-            pilihan = int(input("Pilih menu: "))
-            if pilihan == 1:
-                tampilkan_mahasiswa()
+            pilihan = int(input("Pilih menu: ")) #Kita meminta pengguna untuk memilih menu dengan mengetikkan angka. 'int()' digunakan untuk mengubah input menjadi angka bulat.
+
+            if pilihan == 1: #Di sini, kita memeriksa pilihan yang dimasukkan oleh pengguna:                                 
+                tampilkan_mahasiswa() #Jika pengguna memilih 1, maka fungsi 'tampilkan_mahasiswa()' akan dipanggil untuk menampilkan daftar mahasiswa.
             elif pilihan == 2:
-                tambah_mahasiswa()
+                tambah_mahasiswa() #Jika memilih 2, maka 'tambah_mahasiswa()' akan dipanggil untuk menambah mahasiswa baru.
             elif pilihan == 3:
-                ubah_mahasiswa()
+                ubah_mahasiswa() #Jika memilih 3, maka 'ubah_mahasiswa()' akan dipanggil untuk mengubah data mahasiswa.
             elif pilihan == 4:
-                hapus_mahasiswa()
+                hapus_mahasiswa() #Jika memilih 4, maka 'hapus_mahasiswa()' akan dipanggil untuk menghapus mahasiswa.
             elif pilihan == 5:
-                print("Terima kasih, program selesai.")
+                print("Terima kasih, program selesai.") #Jika memilih 5, program akan menampilkan pesan terima kasih dan keluar.
                 exit()
             else:
-                print("Pilihan tidak valid.")
+                print("Pilihan tidak valid.") #Jika pilihan tidak valid (tidak ada dalam daftar), program akan memberi tahu bahwa pilihan tidak valid.
         except ValueError:  
-            print("Masukkan angka saja!")
+            print("Masukkan angka saja!") #Jika pengguna tidak memasukkan angka (misalnya, huruf), program akan menangkap kesalahan ini dan menampilkan pesan bahwa hanya angka yang boleh dimasukkan.
 
 # Jalankan program
-main()
+main() #Terakhir, kita memanggil fungsi 'main()' untuk menjalankan seluruh program.
